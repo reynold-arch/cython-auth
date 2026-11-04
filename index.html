@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cython</title>
+<style>
+body{font-family:sans-serif;background:#1C1A16;color:#F2EEE6;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;margin:0;text-align:center}
+a{background:#E8871E;color:#000;padding:14px 28px;border-radius:12px;text-decoration:none;font-weight:bold}
+</style>
+</head>
+<body>
+<h2 id="msg">Connecting to Cython...</h2>
+<p>If the app does not open, tap the button.</p>
+<a id="open" href="#">Open Cython</a>
+<script>
+var code = new URLSearchParams(location.search).get('code');
+if (code) {
+  var link = 'cython://auth?code=' + encodeURIComponent(code);
+  document.getElementById('open').href = link;
+  window.location.href = link;
+} else {
+  document.getElementById('msg').textContent = 'No code received';
+}
+</script>
+</body>
+</html>
